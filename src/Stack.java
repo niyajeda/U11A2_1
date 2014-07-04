@@ -5,10 +5,8 @@ import java.util.*;
  */
 interface MyStack<Object> extends List<Object>
 {
-
 	void push(Object o);
 	void pop();
-
 }
 
 public class Stack<T> implements MyStack<Object>
@@ -28,10 +26,14 @@ public class Stack<T> implements MyStack<Object>
 				mSize++;
 			} else
 				throw new IllegalArgumentException();
-		}catch(IllegalArgumentException e)
+		} catch(IllegalArgumentException e)
 		{
 			e.printStackTrace();
+		} catch(ClassCastException e)
+		{
+			System.out.println("Argument wird nicht unterstützt.");
 		}
+
 	}
 	@Override
 	public void pop()
